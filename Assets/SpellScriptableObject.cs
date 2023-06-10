@@ -13,9 +13,11 @@ public abstract class SpellScriptableObject : ScriptableObject
     protected float _cooldown;
     protected Animation _spellAnimation;
     protected bool _castSuccess;
+    protected GameManager gameManager;
 
     public IEnumerator activateSpellLifecycle(GameObject spellPrefab, GameObject caster)
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         yield return initialize(caster);
         GameObject.Destroy(spellPrefab);
     }

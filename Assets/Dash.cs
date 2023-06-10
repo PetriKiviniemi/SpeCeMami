@@ -56,13 +56,14 @@ public class Dash : SpellScriptableObject
         {
             while (elapsedTime < dashTime)
             {
+                Debug.Log("HERE");
                 //TODO:: Make the lerp slower (Smaller fractions)
                 caster.transform.position = Vector2.Lerp(caster.transform.position, endPos, (elapsedTime / dashTime));
                 elapsedTime += Time.deltaTime;
                 //TODO: Call own function (PauseEvent);
-                yield return new WaitForSeconds(0.3f);
-               // yield return new WaitUntil( () => {
-               // });
+                yield return new WaitUntil( () => {
+                    return gameManager.gameState == GameState.PLAYING;
+                });
             }
         }
 

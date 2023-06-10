@@ -23,11 +23,6 @@ public class CastSpellEvent : CustomEvent
         //updateUI(new List<UIElementType> { UIElementType.TargetUnitFrame });
     }
 
-    public override void PauseEvent()
-    {
-        //TODO:: IMPLEMENT
-    }
-
 //Utilize to update UI
 //    public override void updateUI(List<UIElementType> uiElements)
 //    {

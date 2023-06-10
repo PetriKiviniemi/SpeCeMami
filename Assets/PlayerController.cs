@@ -25,7 +25,6 @@ public class PlayerController : MonoBehaviour
 
     public void OnStart()
     {
-        Debug.Log("Called");
         boxCollider = gameObject.GetComponent<BoxCollider2D>();
     }
 
@@ -70,8 +69,6 @@ public class PlayerController : MonoBehaviour
                 curDir = MovementDir.UP;
             }
         }
-
-        Debug.Log(curDir);
 
         velocity.y += Physics2D.gravity.y * Time.deltaTime * mass;
         gameObject.transform.Translate(velocity * Time.deltaTime);
